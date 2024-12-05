@@ -22,16 +22,16 @@ class MainActivity : AppCompatActivity() {
         binding.botmenu.setOnItemSelectedListener {
 
             when (it.itemId) {
-                R.id.home -> supportFragmentManager.beginTransaction()
-                    .replace(R.id.framenContainer, HomeFragment()).commit()
 
-                R.id.id -> supportFragmentManager.beginTransaction()
-                    .replace(R.id.framenContainer, ProfileFragment()).commit()
 
-                R.id.support -> supportFragmentManager.beginTransaction()
+                R.id.action_create_product -> supportFragmentManager.beginTransaction()
                     .replace(R.id.framenContainer, SupportFragment()).commit()
 
-                R.id.out -> finish()
+                R.id.action_update_product -> supportFragmentManager.beginTransaction()
+                    .replace(R.id.framenContainer, ProfileFragment()).commit()
+
+                R.id.action_log_out -> finish()
+                R.id.action_go_out -> finishAffinity()
             }
             true
         }
